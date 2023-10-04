@@ -73,7 +73,7 @@ int main()
         puts(" 2 - New game.");
         puts(" 3 - Authors.");
         puts(" 4 - Exit.");
-        c = getchar();
+        c = getch();
         switch (c) {
         case '1':
             rules();
