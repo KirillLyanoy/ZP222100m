@@ -10,6 +10,15 @@ void rules()
     getch();
 }
 
+void authors()
+{
+    system("CLS");
+    printf(" Students of SibSUTIS, ZP-222 group:\n\n");
+    printf("1. Lyanoy Kirill.\n");
+    printf("2. Spirina Olga.\n");
+    getch();
+}
+
 int main()
 {
     char c;
@@ -25,3 +34,14 @@ int main()
         case '1':
             rules();
             break;
+        case '2':
+            newgame();
+            break;
+        case '3':
+            authors();
+            break;
+        case '4':
+            return 0;
+        }
+    }
+}
