@@ -1,6 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void rules()
+{
+    system("CLS");
+    printf("There are 100 matches on the table. \nPlayer #1 and player #2 take "
+           "turns taking from 1 to 10 matches. \nThe one who takes the last "
+           "match wins.\n");
+    getch();
+}
+
 int main()
 {
     char c;
@@ -16,14 +25,3 @@ int main()
         case '1':
             rules();
             break;
-        case '2':
-            newgame();
-            break;
-        case '3':
-            authors();
-            break;
-        case '4':
-            return 0;
-        }
-    }
-}
