@@ -1,4 +1,5 @@
 #include "mathfunctions.h"
+#include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -8,22 +9,6 @@ void rules()
     printf("There are 100 matches on the table. \nPlayer #1 and player #2 take "
            "turns taking from 1 to 10 matches. \nThe one who takes the last "
            "match wins.\n");
-    getch();
-}
-
-void newgame()
-{
-    int MUTCHES_LEFT = 100, PLAYER_NUMBER = 0;
-
-    while (MUTCHES_LEFT > 0) {
-        system("CLS");
-        MUTCHES_LEFT = move(MUTCHES_LEFT, PLAYER_NUMBER);
-        if (MUTCHES_LEFT != 0)
-            PLAYER_NUMBER = subtraction(1, PLAYER_NUMBER);
-    }
-    system("CLS");
-    printf(" There are no matches left on the table.\n\n");
-    printf(" Congratulations! Player #%d wins.", addition(PLAYER_NUMBER, 1));
     getch();
 }
 
@@ -52,6 +37,22 @@ int move(int MUTCHES_LEFT, int PLAYER_NUMBER)
         }
     } while ((MUTCHES_TAKEN < 1) || (MUTCHES_TAKEN > 10));
     return (MUTCHES_LEFT);
+}
+
+void newgame()
+{
+    int MUTCHES_LEFT = 100, PLAYER_NUMBER = 0;
+
+    while (MUTCHES_LEFT > 0) {
+        system("CLS");
+        MUTCHES_LEFT = move(MUTCHES_LEFT, PLAYER_NUMBER);
+        if (MUTCHES_LEFT != 0)
+            PLAYER_NUMBER = subtraction(1, PLAYER_NUMBER);
+    }
+    system("CLS");
+    printf(" There are no matches left on the table.\n\n");
+    printf(" Congratulations! Player #%d wins.", addition(PLAYER_NUMBER, 1));
+    getch();
 }
 
 void authors()
