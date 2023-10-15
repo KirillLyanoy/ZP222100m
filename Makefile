@@ -30,7 +30,7 @@ $(OBJ_DIR)/main.o: $(TEST_DIR)/main.c
 	gcc -c $(TEST_DIR)/main.c -I thirdparty/ -I src/ -o $(OBJ_DIR)/main.o
 
 $(OBJ_DIR)/tests.o: $(TEST_DIR)/tests.c
-	gcc -c $(TEST_DIR)/tests.c -I thirdparty/ -I src/ -o o $(OBJ_DIR)bj/tests.o
+	gcc -c $(TEST_DIR)/tests.c -I thirdparty/ -I src/ -o o $(OBJ_DIR)/tests.o
 
 clean:
 	rm -f -r $(OBJ_DIR)/*.o
