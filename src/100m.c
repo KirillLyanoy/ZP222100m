@@ -1,4 +1,5 @@
 #include "mathfunctions.h"
+#include "mutches_check.h"
 #include <conio.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,27 +16,28 @@ void rules()
 int move(int MUTCHES_LEFT, int PLAYER_NUMBER)
 {
     int MUTCHES_TAKEN;
+    int CHECK_INDEX;
+    printf(" %d matches left.\n\n", MUTCHES_LEFT);
+
     do {
-        printf(" %d matches left.\n\n", MUTCHES_LEFT);
         printf(" Player #%d, take from 1 to 10 matches. \n",
                addition(PLAYER_NUMBER, 1));
-        scanf("%d", &MUTCHES_TAKEN);
-        fflush(stdin);
-        if (MUTCHES_TAKEN > 0 & MUTCHES_TAKEN < 11) {
-            if (MUTCHES_TAKEN > MUTCHES_LEFT) {
-                system("CLS");
-                printf(" The number of matches taken cannot be greater than "
-                       "the number of matches remaining on the table.\n\n");
-                MUTCHES_TAKEN = 11;
-            } else
-                MUTCHES_LEFT = subtraction(MUTCHES_LEFT, MUTCHES_TAKEN);
-        } else
 
-        {
-            system("CLS");
-            printf(" Wrong number of matches.\n\n");
-        }
-    } while ((MUTCHES_TAKEN < 1) || (MUTCHES_TAKEN > 10));
+        CHECK_INDEX = scanf("%d", &MUTCHES_TAKEN);
+        rewind(stdin);
+
+        system("CLS");
+        CHECK_INDEX = mutches_check(MUTCHES_TAKEN, CHECK_INDEX);
+
+    } while ((CHECK_INDEX == 1) || (CHECK_INDEX == 2));
+    if (MUTCHES_TAKEN > MUTCHES_LEFT) {
+        system("CLS");
+        printf(" The number of matches taken cannot be greater than "
+               "the number of matches remaining on the table.\n\n");
+        MUTCHES_TAKEN = 11;
+    } else
+        MUTCHES_LEFT = subtraction(MUTCHES_LEFT, MUTCHES_TAKEN);
+
     return (MUTCHES_LEFT);
 }
 
@@ -90,3 +92,5 @@ int main()
         }
     }
 }
+
+
