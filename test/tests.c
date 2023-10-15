@@ -1,5 +1,5 @@
-#include "../src/mathfunctions.h"
-#include "../thirdparty/ctest.h"
+#include "mathfunctions.h"
+#include "ctest.h"
 #include <stdio.h>
 
 CTEST(TEST_SUBTRACTION, SUITE_1)
