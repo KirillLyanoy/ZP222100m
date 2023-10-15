@@ -1,6 +1,6 @@
+#include "ctest.h"
 #include "mathfunctions.h"
 #include "mutches_check.h"
-#include "ctest.h"
 #include <stdio.h>
 
 CTEST(TEST_SUBTRACTION, SUITE_1)
@@ -127,3 +127,5 @@ CTEST(TEST_INPUT_DATA, SUITE_5)
     int expected = 2;
     ASSERT_EQUAL(expected, result);
 }
+
+
