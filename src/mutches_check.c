@@ -16,5 +16,3 @@ int mutches_check(int MUTCHES_TAKEN, int CHECK_INDEX)
         return (3);
     }
 }
-
-
