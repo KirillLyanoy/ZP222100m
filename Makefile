@@ -4,9 +4,9 @@ TEST_DIR = test
 
 BIN_DIR = bin
 
-OBJECTS = obj/100m.o obj/mathfunctions.o
+OBJECTS = obj/100m.o obj/mathfunctions.o obj/mutches_check.o
 
-OBJECTS_TEST = obj/main.o obj/tests.o obj/mathfunctions.o
+OBJECTS_TEST = obj/main.o obj/tests.o obj/mathfunctions.o obj/mutches_check.o
 
 $(BIN_DIR)/program.exe: $(OBJECTS)
 	gcc -Wall -Werror $(OBJECTS) -o $(BIN_DIR)/program.exe
@@ -16,6 +16,9 @@ obj/100m.o: $(SRC_DIR)/100m.c
 
 obj/mathfunctions.o : $(SRC_DIR)/mathfunctions.c
 	gcc -c $(SRC_DIR)/mathfunctions.c -o obj/mathfunctions.o
+
+obj/mutches_check.o: $(SRC_DIR)/mutches_check.c
+	gcc -c $(SRC_DIR)/mutches_check.c -o obj/mutches_check.o
 
 test: $(OBJECTS_TEST)
 	gcc $(OBJECTS_TEST) -o $(BIN_DIR)/test
