@@ -22,7 +22,7 @@ $(OBJ_DIR)/mathfunctions.o : $(SRC_DIR)/mathfunctions.c
 $(OBJ_DIR)/mutches_check.o: $(SRC_DIR)/mutches_check.c
 	gcc -c $(SRC_DIR)/mutches_check.c -o $(OBJ_DIR)/mutches_check.o
 
-test.exe: $(OBJECTS_TEST)
+test: $(OBJECTS_TEST)
 	gcc $(OBJECTS_TEST) -o $(BIN_DIR)/test.exe
 	./$(BIN_DIR)/test.exe
 
