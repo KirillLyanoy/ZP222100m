@@ -9,6 +9,6 @@ int mutches_check()
     } else
         return (1);
 }
-}
+
 
 
